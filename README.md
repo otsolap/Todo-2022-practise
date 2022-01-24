@@ -1,5 +1,10 @@
-This app is intended as a React pre-task for applying to Buutti as a developer.
+2022 Challange to make a React ToDo application that first requires you to refactor all class components to fuctional components, style it and to top it off create a unit tests to that 1 component well.
 
+
+
+
+ From original Repo:
+_______________________________________________________________________
 <b>Tasks:</b>
 
 1. Refactor this app with the following criterion:
@@ -11,5 +16,4 @@ This app is intended as a React pre-task for applying to Buutti as a developer.
 2. Write unittests to test 1 component well.
 
 <b>To return:</b>
-
--   Fork this repo to your own github, gitlab or bitbucket account and send the interviewer the link to that repo.
+______________________________________________________________________
