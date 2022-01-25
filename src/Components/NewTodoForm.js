@@ -6,8 +6,6 @@ import UseInputState from '../Hooks/UseInputState';
 export function NewTodoForm({ addTodo }) {
     const [value, onInputChange, reset] = UseInputState("")
 
-
-
     return (
         <Form onSubmit={e => {
             e.preventDefault();
@@ -28,13 +26,14 @@ export function NewTodoForm({ addTodo }) {
                 <Form.Text className="text-muted">
                     Add new task
                 </Form.Text>
-                <Button
-                    variant="success"
-                    className="btn btn-success"
-                >
-                    Submit
-                </Button>
             </Form.Group>
+            <Button
+                variant="success"
+                className="btn"
+                type="submit"
+            >
+                Submit
+            </Button>
         </Form>
     );
 }

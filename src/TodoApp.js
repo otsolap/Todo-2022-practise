@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid'
 import Navbar from './Components/Navbar';
 import TodoList from './Components/TodoList';
 import { NewTodoForm } from './Components/NewTodoForm';
 import Footer from './Components/Footer'
 import './App.css';
+import { v4 as uuidv4 } from 'uuid'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 
 export function TodoApp() {
@@ -27,15 +30,19 @@ export function TodoApp() {
 
 
     return (
-        <div>
+        <Container>
             <Navbar />
-            <TodoList
-                todos={todos}
-                removeTodo={removeTodo}
-            />
-            <NewTodoForm addTodo={addTodo} />
+            <Row>
+                <Col>
+                    <TodoList
+                        todos={todos}
+                        removeTodo={removeTodo}
+                    />
+                    <NewTodoForm addTodo={addTodo} />
+                </Col>
+            </Row>
             <Footer />
-        </div>
+        </Container>
     );
 }
 
