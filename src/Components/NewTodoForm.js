@@ -1,19 +1,27 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import UseInputState from '../Hooks/UseInputState';
 
-export function NewTodoForm(props) {
+export function NewTodoForm({ addTodo }) {
+    const [value, onInputChange, reset] = UseInputState("")
+
+    const formSubmit = (e) => {
+        e.preventDefault();
+        addTodo(value)
+        reset();
+    }
 
     return (
         <Form.Group
-            onSubmit={props.onSubmit}>
+            onSubmit={formSubmit}>
             <Form.Label>
                 Tasks To Do
             </Form.Label>
             <Form.Control
                 placeholder="Add new task"
-                value={props.newTodoName}
-                onChange={props.onInputChange}>
+                value={value}
+                onChange={onInputChange}>
             </Form.Control>
             <Button
                 variant="success"

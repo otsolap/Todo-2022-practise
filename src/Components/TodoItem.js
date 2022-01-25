@@ -1,36 +1,47 @@
 import React from 'react';
+import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button'
+import { faCheckCircle, faWrench, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export function TodoItem(props) {
-    let color;
-    let text;
+export function TodoItem({ task, id, complete, removeTodo }) {
 
-    if (props.todo.complete === true) {
-        color = 'lightgreen';
-        text = 'Complete';
-    } else {
-        color = 'pink';
-        text = 'Incomplete';
+    function onClick(id) {
+        var todoItems = this.state.todos.slice();
+        for (let i = 0; i < this.state.todos.length; i++) {
+            if (todoItems[i].id === id) {
+                var newComplete = !todoItems[i].complete;
+                todoItems[i].complete = newComplete;
+            }
+        }
+
+        this.setState({
+            todos: todoItems
+        });
     }
 
     return (
-        <div className="wrapper"
-            style={{ backgroundColor: color }}>
-            <h3>{props.todo.name}</h3>
+        <Col xl={12}
+            style={{ backgroundColor: complete ? "lightgreen" : "pink" }}>
+            <h3>{task}</h3>
             <Button
-                variant={props.todo.complete ? "success" : "secondary"}
+                variant={complete ? "success" : "secondary"}
                 className="btn"
-                onClick={() => props.onClick(props.todo.id)}>
-                {text}
+                onClick={() => onClick(id)}>
+                {complete ?
+                    <FontAwesomeIcon aria-label="Task completed" icon={faCheckCircle} />
+                    : <FontAwesomeIcon aria-label="Work in Progress" icon={faWrench} />}
             </Button>
             <Button
                 variant="danger"
                 className="btn"
                 onClick={() =>
-                    props.onRemoveClick(props.todo.id)
+                    removeTodo(id)
                 }>
-                Remove from list
+                <FontAwesomeIcon
+                    aria-label="Delete Task"
+                    icon={faTrashAlt} />
             </Button>
-        </div>
+        </Col>
     );
 }
