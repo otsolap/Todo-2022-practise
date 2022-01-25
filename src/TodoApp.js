@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Navbar from './Components/Navbar';
 import TodoList from './Components/TodoList';
 import { NewTodoForm } from './Components/NewTodoForm';
 import Footer from './Components/Footer'
 import './App.css';
-import { v4 as uuidv4 } from 'uuid'
+import useTodoState from './Hooks/useTodoState';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -18,21 +18,7 @@ export function TodoApp() {
         { id: 4, task: 'Do the dishes', complete: false },
         { id: 5, task: 'Change car tyres', complete: false }
     ]
-    const [todos, setTodos] = useState(initialTodos)
-
-    const addTodo = newTodoTask => {
-        setTodos([...todos, { id: uuidv4(), task: newTodoTask, complete: false }])
-    }
-    const removeTodo = todoId => {
-        const remainingTodos = todos.filter(todo => todo.id !== todoId)
-        setTodos(remainingTodos)
-    }
-    const toggleComplete = todoId => {
-        const completedTodos = todos.map(todo =>
-            todo.id === todoId ? { ...todo, complete: !todo.complete } : todo
-        )
-        setTodos(completedTodos)
-    }
+    const { todos, addTodo, removeTodo, toggleComplete } = useTodoState(initialTodos)
 
 
     return (
