@@ -1,7 +1,7 @@
 import React from 'react';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button'
-import { faCheckCircle, faWrench, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { faCheckCircle, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export function TodoItem({ task, id, complete, removeTodo, toggleComplete }) {
@@ -18,7 +18,7 @@ export function TodoItem({ task, id, complete, removeTodo, toggleComplete }) {
                 onClick={() => toggleComplete(id)}>
                 {complete ?
                     <FontAwesomeIcon aria-label="Task completed" icon={faCheckCircle} />
-                    : <FontAwesomeIcon aria-label="Work in Progress" icon={faWrench} />}
+                    : <FontAwesomeIcon aria-label="Work in Progress" icon={faCheckCircle} />}
             </Button>
             <Button
                 variant="danger"

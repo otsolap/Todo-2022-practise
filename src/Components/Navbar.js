@@ -7,15 +7,18 @@ export default function Nav() {
     return (
         <Navbar expand="lg" variant="dark" bg="dark">
             <Container>
-                <Navbar.Brand href="#">
+                <Navbar.Brand href="#"
+                    className="social-media-icon"
+                >
                     <img
                         src={logo}
-                        width="50"
-                        height="50"
+                        width="80px"
+                        height="80px"
                         className="d-inline-block align-top"
                         alt="Otso Lappalainen | Kultakammen"
                     />
-                    Todo App</Navbar.Brand>
+                    Todo App
+                </Navbar.Brand>
             </Container>
         </Navbar>
     )

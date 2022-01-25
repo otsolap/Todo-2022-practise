@@ -6,8 +6,6 @@ import Footer from './Components/Footer'
 import './App.css';
 import useTodoState from './Hooks/useTodoState';
 import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 
 
 export function TodoApp() {
@@ -24,16 +22,12 @@ export function TodoApp() {
     return (
         <Container>
             <Navbar />
-            <Row>
-                <Col>
-                    <TodoList
-                        todos={todos}
-                        removeTodo={removeTodo}
-                        toggleComplete={toggleComplete}
-                    />
-                    <NewTodoForm addTodo={addTodo} />
-                </Col>
-            </Row>
+            <TodoList
+                todos={todos}
+                removeTodo={removeTodo}
+                toggleComplete={toggleComplete}
+            />
+            <NewTodoForm addTodo={addTodo} />
             <Footer />
         </Container>
     );

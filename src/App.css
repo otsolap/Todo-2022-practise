@@ -1,28 +1,16 @@
 body {
-	margin: auto;
+	margin: 0;
+	padding: 0;
+	width: 100%;
 	max-width: 1440px;
 	line-height: 1.6;
 	font-size: 18px;
 	color: #444;
-	padding: 0;
 }
 
-h1,
-h3 {
-	text-align: center;
-}
-
-.wrapper {
-	display: grid;
-	grid-template-columns: 5fr 2fr 1fr;
-	border: solid 1px;
-	margin-bottom: 2px;
-}
-
-.complete {
-	color: #c4c4c4;
-}
-
-.btn {
-	cursor: pointer;
+.social-media-icon {
+	height: 80px;
+	/* Svg icons..... */
+	font-size: 60px;
+	color: #e39b41;
 }
