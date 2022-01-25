@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid'
 import Navbar from './Components/Navbar';
 import TodoList from './Components/TodoList';
 import { NewTodoForm } from './Components/NewTodoForm';
 import Footer from './Components/Footer'
 import './App.css';
-import uuid from "uuid/v4";
+
 
 export function TodoApp() {
     const initialTodos = [
@@ -15,8 +16,9 @@ export function TodoApp() {
         { id: 5, task: 'Change car tyres', complete: false }
     ]
     const [todos, setTodos] = useState(initialTodos)
+
     const addTodo = newTodoTask => {
-        setTodos([...todos, { id: uuid(), task: newTodoTask, completed: false }])
+        setTodos([...todos, { id: uuidv4(), task: newTodoTask, complete: false }])
     }
     const removeTodo = todoId => {
         const remainingTodos = todos.filter(todo => todo.id !== todoId)

@@ -6,30 +6,35 @@ import UseInputState from '../Hooks/UseInputState';
 export function NewTodoForm({ addTodo }) {
     const [value, onInputChange, reset] = UseInputState("")
 
-    const formSubmit = (e) => {
-        e.preventDefault();
-        addTodo(value)
-        reset();
-    }
+
 
     return (
-        <Form.Group
-            onSubmit={formSubmit}>
-            <Form.Label>
-                Tasks To Do
-            </Form.Label>
-            <Form.Control
-                placeholder="Add new task"
-                value={value}
-                onChange={onInputChange}>
-            </Form.Control>
-            <Button
-                variant="success"
-                className="btn btn-success"
-                type="submit"
-                value="Submit">
-                Submit
-            </Button>
-        </Form.Group>
+        <Form onSubmit={e => {
+            e.preventDefault();
+            addTodo(value)
+            reset();
+        }}>
+            <Form.Group>
+                <Form.Label>
+                    Tasks To Do
+                </Form.Label>
+                <Form.Control
+                    type="text"
+                    name="task"
+                    id="task"
+                    value={value}
+                    onChange={onInputChange}
+                />
+                <Form.Text className="text-muted">
+                    Add new task
+                </Form.Text>
+                <Button
+                    variant="success"
+                    className="btn btn-success"
+                >
+                    Submit
+                </Button>
+            </Form.Group>
+        </Form>
     );
 }
