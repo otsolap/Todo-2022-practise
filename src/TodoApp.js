@@ -25,7 +25,13 @@ export function TodoApp() {
     }
     const removeTodo = todoId => {
         const remainingTodos = todos.filter(todo => todo.id !== todoId)
-        setTodos(remainingTodos);
+        setTodos(remainingTodos)
+    }
+    const toggleComplete = todoId => {
+        const completedTodos = todos.map(todo =>
+            todo.id === todoId ? { ...todo, complete: !todo.complete } : todo
+        )
+        setTodos(completedTodos)
     }
 
 
@@ -37,6 +43,7 @@ export function TodoApp() {
                     <TodoList
                         todos={todos}
                         removeTodo={removeTodo}
+                        toggleComplete={toggleComplete}
                     />
                     <NewTodoForm addTodo={addTodo} />
                 </Col>

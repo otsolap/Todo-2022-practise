@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import { TodoItem } from './TodoItem';
 
-export default function TodoList({ todos, removeTodo }) {
+export default function TodoList({ todos, removeTodo, toggleComplete }) {
     return (
         <Container>
             <Row>
@@ -14,6 +14,7 @@ export default function TodoList({ todos, removeTodo }) {
                         id={todo.id}
                         complete={todo.complete}
                         removeTodo={removeTodo}
+                        toggleComplete={toggleComplete}
                     />
                 ))}
             </Row>

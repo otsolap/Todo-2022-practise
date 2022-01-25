@@ -4,21 +4,9 @@ import Button from 'react-bootstrap/Button'
 import { faCheckCircle, faWrench, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export function TodoItem({ task, id, complete, removeTodo }) {
+export function TodoItem({ task, id, complete, removeTodo, toggleComplete }) {
 
-    function onClick(id) {
-        var todoItems = this.state.todos.slice();
-        for (let i = 0; i < this.state.todos.length; i++) {
-            if (todoItems[i].id === id) {
-                var newComplete = !todoItems[i].complete;
-                todoItems[i].complete = newComplete;
-            }
-        }
 
-        this.setState({
-            todos: todoItems
-        });
-    }
 
     return (
         <Col xl={12}
@@ -27,7 +15,7 @@ export function TodoItem({ task, id, complete, removeTodo }) {
             <Button
                 variant={complete ? "success" : "secondary"}
                 className="btn"
-                onClick={() => onClick(id)}>
+                onClick={() => toggleComplete(id)}>
                 {complete ?
                     <FontAwesomeIcon aria-label="Task completed" icon={faCheckCircle} />
                     : <FontAwesomeIcon aria-label="Work in Progress" icon={faWrench} />}
