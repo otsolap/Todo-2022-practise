@@ -5,7 +5,6 @@ import { NewTodoForm } from './Components/NewTodoForm';
 import Footer from './Components/Footer'
 import './App.css';
 import useTodoState from './Hooks/useTodoState';
-import Container from 'react-bootstrap/Container'
 
 
 export function TodoApp() {
@@ -20,7 +19,7 @@ export function TodoApp() {
 
 
     return (
-        <Container className="TodoContainer">
+        <div className="TodoContainer">
             <Navbar />
             <NewTodoForm addTodo={addTodo} />
             <TodoList
@@ -29,7 +28,7 @@ export function TodoApp() {
                 toggleComplete={toggleComplete}
             />
             <Footer />
-        </Container>
+        </div>
     );
 }
 

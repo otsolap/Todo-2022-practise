@@ -9,8 +9,8 @@ export function NewTodoForm({ addTodo }) {
     const [value, onInputChange, reset] = UseInputState("")
 
     return (
-        <Container className="bg-dark py-5">
-            <Row>
+        <Container className="bg-dark py-5 d-flex justify-content-center">
+            <Row className="custom-w-55">
                 <Form onSubmit={e => {
                     e.preventDefault();
                     addTodo(value)
@@ -27,14 +27,15 @@ export function NewTodoForm({ addTodo }) {
                             id="task"
                             value={value}
                             onChange={onInputChange}
+                            className="mb-1"
                         />
-                        <Form.Text className="text-muted text-light">
+                        <Form.Text className="py-3 text-muted text-light">
                             Add new task
                         </Form.Text>
                     </Form.Group>
                     <Button
                         variant="success"
-                        className="btn"
+                        className="mt-1"
                         type="submit"
                     >
                         Submit
