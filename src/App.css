@@ -62,6 +62,7 @@ body,
 .todo-item {
 	width: 360px !important;
 	margin-bottom: 1rem;
+	border-radius: 0.25rem;
 }
 
 /* Footer */

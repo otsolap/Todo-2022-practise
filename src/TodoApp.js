@@ -17,7 +17,6 @@ export function TodoApp() {
     ]
     const { todos, addTodo, removeTodo, toggleComplete } = useTodoState(initialTodos)
 
-
     return (
         <div className="TodoContainer">
             <Navbar />

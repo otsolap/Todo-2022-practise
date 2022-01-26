@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './TodoApp';
+import TodoApp from "./TodoApp"
 // Bootstrap's CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<TodoApp />, document.getElementById('root'));

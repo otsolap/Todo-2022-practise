@@ -7,8 +7,6 @@ import { faLinkedin, faGithub, } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import hoverLogo from '../imgs/Avatar_sm_whyte.png'
 
-
-
 export default function Footer() {
     return (
         <Container role="footer"
