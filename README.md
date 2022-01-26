@@ -23,6 +23,3 @@ _______________________________________________________________________
 -   Change the UI look to something better. You choose the style.
 
 2. Write unittests to test 1 component well.
-
-<b>To return:</b>
-______________________________________________________________________
