@@ -5,15 +5,18 @@ import Col from 'react-bootstrap/Col'
 import logo from '../imgs/Avatar_sm.png'
 import { faLinkedin, faGithub, } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import hoverLogo from '../imgs/Avatar_sm_whyte.png'
+
 
 
 export default function Footer() {
     return (
         <Container role="footer"
-            className="justify-content-md-center bg-dark">
-            <p className="text-center text-light">Otso Lappalainen | Buuti Oy</p>
+            className="pt-3 justify-content-md-center bg-dark">
+            <p className="text-center text-light">Otso Lappalainen | for Buuti Oy</p>
             <Row>
-                <Col md={4}
+                <Col
+                    sm={12}
                     className="text-center"
                 >
                     <a
@@ -23,14 +26,12 @@ export default function Footer() {
                     >
                         <img
                             src={logo}
-                            className="social-media-icon"
+                            onMouseOver={e => (e.currentTarget.src = hoverLogo)}
+                            onMouseOut={e => (e.currentTarget.src = logo)}
+                            className="social-media-img"
                             alt="Otso Lappalainen | Kultakammen"
                         />
                     </a>
-                </Col>
-                <Col md={4}
-                    className="text-center"
-                >
                     <a
                         className="social-media-icon"
                         target="_blank"
@@ -42,10 +43,6 @@ export default function Footer() {
                             aria-label="LinkedIn profile"
                             icon={faLinkedin} />
                     </a>
-                </Col>
-                <Col md={4}
-                    className="text-center"
-                >
                     <a
                         className="social-media-icon"
                         target="_blank"

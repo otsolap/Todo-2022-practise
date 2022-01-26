@@ -1,16 +1,63 @@
-body {
+/* App */
+
+* {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+	height: 100%;
 	width: 100%;
 	max-width: 1440px;
 	line-height: 1.6;
 	font-size: 18px;
-	color: #444;
+	font-family: 'Open Sans', sans-serif;
 }
 
-.social-media-icon {
+.TodoContainer {
+	max-width: 720px;
+}
+
+/* New Todo Form */
+
+/* Todo List */
+
+.margin-x-max {
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.task-name {
+	/* mr-1 didn't want to work. */
+	margin-right: 1rem;
+}
+
+.todo-item {
+	width: 360px !important;
+	margin-bottom: 1rem;
+}
+
+/* Footer */
+
+.social-media-img {
 	height: 80px;
-	/* Svg icons..... */
+	margin-bottom: 2rem;
+}
+
+/* Svg icons */
+.social-media-icon {
 	font-size: 60px;
 	color: #e39b41;
+}
+
+.social-media-icon:nth-child(2) {
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
+.social-media-icon:hover {
+	color: #ffff;
 }

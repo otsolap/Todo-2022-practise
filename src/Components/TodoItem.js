@@ -5,16 +5,14 @@ import { faCheckCircle, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export function TodoItem({ task, id, complete, removeTodo, toggleComplete }) {
-
-
-
     return (
-        <Col xl={12}
-            style={{ backgroundColor: complete ? "lightgreen" : "pink" }}>
-            <h3>{task}</h3>
+        <Col
+            xl={12}
+            className={`todo-item d-flex justify-content-center pt-1 align-items-baseline ${complete ? 'bg-success' : 'bg-secondary'}`}
+        >
+            <p className="text-light task-name">{task}</p>
             <Button
                 variant={complete ? "success" : "secondary"}
-                className="btn"
                 onClick={() => toggleComplete(id)}>
                 {complete ?
                     <FontAwesomeIcon aria-label="Task completed" icon={faCheckCircle} />
@@ -22,7 +20,6 @@ export function TodoItem({ task, id, complete, removeTodo, toggleComplete }) {
             </Button>
             <Button
                 variant="danger"
-                className="btn"
                 onClick={() =>
                     removeTodo(id)
                 }>
@@ -30,6 +27,6 @@ export function TodoItem({ task, id, complete, removeTodo, toggleComplete }) {
                     aria-label="Delete Task"
                     icon={faTrashAlt} />
             </Button>
-        </Col>
+        </Col >
     );
 }

@@ -10,24 +10,24 @@ import Container from 'react-bootstrap/Container'
 
 export function TodoApp() {
     const initialTodos = [
-        { id: 1, task: 'Go to the supermarket', complete: false },
-        { id: 2, task: 'Call Alice', complete: false },
-        { id: 3, task: 'Ask Alice to call Bob', complete: false },
-        { id: 4, task: 'Do the dishes', complete: false },
-        { id: 5, task: 'Change car tyres', complete: false }
+        { id: 1, task: 'Apply to Buuti', complete: true },
+        { id: 2, task: 'Interview call with Pakarinen', complete: true },
+        { id: 3, task: 'Create a React ToDo App with hooks', complete: true },
+        { id: 4, task: 'Prepare for next interview', complete: false },
+        { id: 5, task: 'Get a cool new job', complete: false }
     ]
     const { todos, addTodo, removeTodo, toggleComplete } = useTodoState(initialTodos)
 
 
     return (
-        <Container>
+        <Container className="TodoContainer">
             <Navbar />
+            <NewTodoForm addTodo={addTodo} />
             <TodoList
                 todos={todos}
                 removeTodo={removeTodo}
                 toggleComplete={toggleComplete}
             />
-            <NewTodoForm addTodo={addTodo} />
             <Footer />
         </Container>
     );
