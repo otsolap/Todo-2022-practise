@@ -19,9 +19,7 @@ export function TodoItem({ task, id, complete, removeTodo, toggleComplete }) {
                 <Button
                     variant={complete ? "success" : "secondary"}
                     onClick={() => toggleComplete(id)}>
-                    {complete ?
-                        <FontAwesomeIcon aria-label="Task completed" icon={faCheckCircle} />
-                        : <FontAwesomeIcon aria-label="Work in Progress" icon={faCheckCircle} />}
+                    <FontAwesomeIcon aria-label={complete ? "Task completed" : "Work in Progress"} icon={faCheckCircle} />
                 </Button>
                 <Button
                     variant="danger"
