@@ -5,6 +5,10 @@ New Learnings:
 - Tests with React-Testing-Library 
 - Bootstrap components have issues with test ids? Need to check this further on.
 
+Resources used:
+- Stackoverflow
+- React Bootstrap & Fontawesome resources
+- Previous done ToDo app from Colt Steele React course.
 
 
 
@@ -19,6 +23,3 @@ _______________________________________________________________________
 -   Change the UI look to something better. You choose the style.
 
 2. Write unittests to test 1 component well.
-
-<b>To return:</b>
-______________________________________________________________________
